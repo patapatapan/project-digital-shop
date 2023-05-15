@@ -21,6 +21,7 @@
 
     </script>
     <style>
+        /* 輪播圖的css */
         .shop-list {
             width: 75%;
             max-width: 1600px;
@@ -29,9 +30,6 @@
             margin-right: auto;
             display: flex;
         }
-
-        /* .carousel {        
-        } */
 
         .carousel-inner {
 
@@ -98,13 +96,27 @@
             align-items: center;
         }
 
-        .sm-pic {}
-
         .col-4 {
             padding: 0;
         }
 
         .col-8 {
+            padding: 0;
+        }
+
+        /* 滑動商品列的寬 高 置中 */
+        .swipe-list {
+            width: 75%;
+            aspect-ratio: 16/9;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .swipe-list .carousel-inner {
+            border-radius: 0;
+        }
+
+        .swipe-list .col {
             padding: 0;
         }
     </style>
@@ -277,12 +289,55 @@
             </div>
         </div>
 
+        <!-- 滑動商品列 -->
+        <div class="row swipe-list">
+            <div class="col">
+                <div class="row d-flex">
+                    <div class="col">
+                        <span class="">
+                            <h4 style="width: fit-content; margin:0 auto 0 auto; padding-bottom: 50px;">
+                                優惠商品</h4>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-slide-to="0">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img src="img/a1.jpg" alt="" class="h-100 w-100" style="border-radius: 10px;">
+                                </div>
+                                <div class="col-3"><img src="img/a2.jpg" alt="" class="h-100 w-100"
+                                        style="border-radius: 10px;"></div>
+                                <div class="col-3"><img src="img/a3.jpg" alt="" class="h-100 w-100"
+                                        style="border-radius: 10px;"></div>
+                                <div class="col-3"><img src="img/a4.jpg" alt="" class="h-100 w-100"
+                                        style="border-radius: 10px;"></div>
+                            </div>
+
+                        </div>
+                        <!-- <div class="carousel-item" data-slide-to="1"><img src="img/2.jpg" alt="" class="h-100 w-100">
+                        </div>
+                        <div class="carousel-item" data-slide-to="2"><img src="img/3.jpg" alt="" class="h-100 w-100">
+                        </div>
+                        <div class="carousel-item" data-slide-to="3"><img src="img/4.jpg" alt="" class="h-100 w-100">
+                        </div>
+                        <div class="carousel-item" data-slide-to="4"><img src="img/5.jpg" alt="" class="h-100 w-100">
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- 底部版權 -->
         <div class="row mt-5">
 
             <div class="col m-0 p-5" style="background-color:rgb(73, 73, 73)">
                 <hr style="margin:0 auto; width: 90%; color: #ffffff;">
-                <div class="text-center text-white mt-5">-&copy;2023 Patapatapan 版權所有 參考Epic Games 無商業利益 純個人練習 -</div>
+                <div class="text-center text-white mt-5">-&copy;2023 Patapatapan 版權所有 參考Epic Games , Steam , Electronic
+                    Arts ,
+                    Ubisoft 無商業利益 純個人練習 。-</div>
             </div>
         </div>
 
