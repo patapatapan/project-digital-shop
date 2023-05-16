@@ -1,0 +1,52 @@
+// 判定按鈕事件
+        setInterval(function () {
+            // 每秒觸發的判斷和操作
+            var carouselElement = $(this).closest('.carousel');
+            var currentSlideIndex = carouselElement.find('.carousel-item.active').index();
+
+            var prevButton = $('.swipe-button.prev');
+            var nextButton = $('.swipe-button.next');
+
+            if (currentSlideIndex == 1) {
+                $('.swipe-button.prev').prop('disabled', true);
+                prevButton.removeClass('.swipe-button:hover').removeAttr('type', 'button');
+                $('.swipe-button.next').prop('disabled', false);
+                nextButton.addClass('your-css-class').attr('type', 'button');
+            } else if (currentSlideIndex == 0) {
+                $('.swipe-button.prev').prop('disabled', false);
+                prevButton.addClass('your-css-class').attr('type', 'button');
+                $('.swipe-button.next').prop('disabled', true);
+                nextButton.removeClass('.swipe-button:hover').removeAttr('type', 'button');
+            }
+        }, 500);
+
+---------------------------------------------------------------------------------------------------------
+        //     performance.mark('start'); //檢測效能 耗時
+
+                //     // 執行任務
+                //     // ...
+
+
+                //     // 結束計時
+                //     performance.mark('end');
+                //     performance.measure('task', 'start', 'end');
+
+                //     // 獲取性能記錄
+                //     const measurements = performance.getEntriesByName('task');
+                //     console.log('執行時間：', measurements[0].duration);
+            });
+
+
+--------------------------------------------------------------------------------------------------
+var carouselElement = $(this).closest('.carousel');
+                var currentSlideIndex = carouselElement.find('.carousel-item.active').index(); //0
+                var totalSlides = carouselElement.find('.carousel-item').length; //2
+                console.log(currentSlideIndex + "+" + totalSlides)
+
+                if ($(this).hasClass('prev')) {
+                    var targetSlideIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
+                    carouselElement.carousel(targetSlideIndex);
+                } else if ($(this).hasClass('next')) {
+                    var targetSlideIndex = (currentSlideIndex + 1) % totalSlides;
+                    carouselElement.carousel(targetSlideIndex);
+                }
