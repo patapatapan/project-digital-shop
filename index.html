@@ -123,13 +123,37 @@
             padding: 0;
         }
 
+        /*優惠商品區的父層設定 可以讓剩餘的子元素填滿剩餘高度*/
+        .swipe-list .project .col-3 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /*優惠商品的圖片比例 9/14*/
+        .aspect-ratio-container {
+            width: 100%;
+            padding-bottom: 140%;
+            position: relative;
+        }
+
+        .aspect-ratio-container>img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 30px 30px 0 0;
+            flex-grow: 1;
+        }
+
         .swipe-button {
             position: absolute;
             width: 50px;
             height: 50px;
             background-color: rgb(73, 73, 73, 0.5);
             border-radius: 100%;
-            top: 50%;
+            top: 35%;
         }
 
         .swipe-button:hover {
@@ -138,6 +162,24 @@
 
         .col-1 span {
             color: #ffffff;
+        }
+
+        .info-box {
+            background-color: rgb(73, 73, 73);
+            opacity: 0.7;
+            width: 100%;
+            border-radius: 0 0 30px 30px;
+            /*height: 30%;*/
+            flex-grow: 1;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .ori-p {
+            text-decoration: line-through;
+            transform: skew(-30deg);
+            font-size: smaller;
         }
     </style>
 </head>
@@ -211,12 +253,12 @@
                     <div class="collapse navbar-collapse menu mr-auto" id="menu">
                         <ul class="nav navbar-nav nav-pills">
                             <li class="nav-item"><a href="" class="nav-link active text-white" data-bs-toggle="pill"
-                                    style="color: black;">線上預約</a> <!--active 顯示當下選擇-->
+                                    style="color: black;">商店首頁</a> <!--active 顯示當下選擇-->
                             </li>
                             <li class="nav-item"><a href="" class="nav-link text-white" data-bs-toggle="pill"
-                                    style="color: black;">服務項目</a></li>
+                                    style="color: black;">我的收藏</a></li>
                             <li class="nav-item"><a href="" class="nav-link text-white" data-bs-toggle="pill"
-                                    style="color: black;">認識我們</a></li>
+                                    style="color: black;">服務項目</a></li>
                         </ul>
                         <div class="user">
                             <span style="margin-right: 10px;">
@@ -312,7 +354,7 @@
         <!-- 滑動商品列 -->
         <div class="row swipe-list">
             <div class="col">
-                <div class="row d-flex" style="border-radius: 10px;">
+                <div class="row d-flex" style="height: 15%;">
                     <div class="col">
                         <span class="">
                             <h2 style="width: fit-content; margin:0 auto 0 auto; padding-bottom: 50px;">
@@ -322,47 +364,100 @@
                     </div>
                 </div>
 
-                <div class="carousel slide project" data-bs-ride="carousel" data-bs-interval="5000">
+                <div class="carousel slide project" data-bs-ride="" data-bs-interval="5000" style="height: 85%;">
                     <div class="row">
                         <div class="col-10 p-0">
                             <div class="carousel-inner">
                                 <div class="carousel-item active" id="1">
                                     <div class="row">
                                         <div class="col-3">
-                                            <img src="img/a1.jpg" alt="" class="h-100 w-100"
-                                                style="border-radius: 10px;">
+                                            <div class="aspect-ratio-container">
+                                                <img src="img/a1.jpg" alt="">
+                                            </div>
+                                            <div class="info-box">
+                                                <h2 class="h5 text-info mb-0 col-12" style="padding:5px 0 0 5px;">
+                                                    薩爾達-王國之淚</h2>
+                                                <span class="price d-flex" style="width: 80%; justify-content: flex-start; flex-wrap: wrap;">
+                                                    <p class="mt-0 text-white col-12 p-0 m-0 ori-p justify-content-center">NT$ 1790</p>
+                                                    <!-- ori-p => origin price -->
+                                                    <p class="mt-0 text-white col-12 p-0 disc-p">NT$ 1690</p>
+                                                    <!-- disc-p => discount price -->
+                                                </span>
+                                            </div>
                                         </div>
                                         <div class="col-3">
-                                            <img src="img/a2.jpg" alt="" class="h-100 w-100"
-                                                style="border-radius: 10px;">
+                                            <div class="aspect-ratio-container">
+                                                <img src="img/a2.jpg" alt="">
+                                            </div>
+                                            <div class="info-box">
+                                                <h2 class="h5 text-info mb-0">地板運動操</h2>
+                                                <p class="mt-0 text-white">讓身體柔軟與訓練反應</p>
+                                                <a href="#" class="btn btn-primary">前往</a>
+                                            </div>
                                         </div>
                                         <div class="col-3">
-                                            <img src="img/a3.jpg" alt="" class="h-100 w-100"
-                                                style="border-radius: 10px;">
+                                            <div class="aspect-ratio-container">
+                                                <img src="img/a3.jpg" alt="">
+                                            </div>
+                                            <div class="info-box">
+                                                <h2 class="h5 text-info mb-0">地板運動操</h2>
+                                                <p class="mt-0 text-white">讓身體柔軟與訓練反應</p>
+                                                <a href="#" class="btn btn-primary">前往</a>
+                                            </div>
                                         </div>
                                         <div class="col-3">
-                                            <img src="img/a4.jpg" alt="" class="h-100 w-100"
-                                                style="border-radius: 10px;">
+                                            <div class="aspect-ratio-container">
+                                                <img src="img/a4.jpg" alt="">
+                                            </div>
+                                            <div class="info-box">
+                                                <h2 class="h5 text-info mb-0">地板運動操</h2>
+                                                <p class="mt-0 text-white">讓身體柔軟與訓練反應</p>
+                                                <a href="#" class="btn btn-primary">前往</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="carousel-item" id="2">
                                     <div class="row">
                                         <div class="col-3">
-                                            <img src="img/a5.jpeg" alt="" class="h-100 w-100"
-                                                style="border-radius: 10px;">
+                                            <div class="aspect-ratio-container">
+                                                <img src="img/a5.jpeg" alt="">
+                                            </div>
+                                            <div class="info-box">
+                                                <h2 class="h5 text-info mb-0">地板運動操</h2>
+                                                <p class="mt-0 text-white">讓身體柔軟與訓練反應</p>
+                                                <a href="#" class="btn btn-primary">前往</a>
+                                            </div>
                                         </div>
                                         <div class="col-3">
-                                            <img src="img/a6.jpg" alt="" class="h-100 w-100"
-                                                style="border-radius: 10px;">
+                                            <div class="aspect-ratio-container">
+                                                <img src="img/a6.jpg" alt="">
+                                            </div>
+                                            <div class="info-box">
+                                                <h2 class="h5 text-info mb-0">地板運動操</h2>
+                                                <p class="mt-0 text-white">讓身體柔軟與訓練反應</p>
+                                                <a href="#" class="btn btn-primary">前往</a>
+                                            </div>
                                         </div>
                                         <div class="col-3">
-                                            <img src="img/a7.jpg" alt="" class="h-100 w-100"
-                                                style="border-radius: 10px;">
+                                            <div class="aspect-ratio-container">
+                                                <img src="img/a7.jpg" alt="">
+                                            </div>
+                                            <div class="info-box">
+                                                <h2 class="h5 text-info mb-0">地板運動操</h2>
+                                                <p class="mt-0 text-white">讓身體柔軟與訓練反應</p>
+                                                <a href="#" class="btn btn-primary">前往</a>
+                                            </div>
                                         </div>
                                         <div class="col-3">
-                                            <img src="img/a8.jpg" alt="" class="h-100 w-100"
-                                                style="border-radius: 10px;">
+                                            <div class="aspect-ratio-container">
+                                                <img src="img/a8.jpg" alt="">
+                                            </div>
+                                            <div class="info-box">
+                                                <h2 class="h5 text-info mb-0">地板運動操</h2>
+                                                <p class="mt-0 text-white">讓身體柔軟與訓練反應</p>
+                                                <a href="#" class="btn btn-primary">前往</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -374,9 +469,9 @@
                                 <span>❮</span>
                             </div>
                         </div>
-                        <div class="col-1 p-0 d-block position-relative">
+                        <div class="col-1 p-0" style="position: relative;">
                             <div class="swipe-button d-flex justify-content-center align-items-center next"
-                                style="right: 0;" type="button"><span>❯</span>
+                                style="margin-left: 10px;" type="button"><span>❯</span>
                             </div>
                         </div>
                     </div>
@@ -417,20 +512,40 @@
             });
         });
 
+        // 滑動商品列 上下頁
         $(document).ready(function () {
-            $('.swipe-button[type="button"]').click(function () {
-                var carousel = $('.carousel.project');
-                var prevButton = $('.swipe-button.prev');
-                var nextButton = $('.swipe-button.next');
+            // $('.swipe-button[type="button"]').click(function () {
+            var carousel = $('.carousel.project');
+            var prevButton = $('.swipe-button.prev');
+            var nextButton = $('.swipe-button.next');
 
-                prevButton.click(function () {
-                    carousel.carousel('prev');
-                });
-
-                nextButton.click(function () {
-                    carousel.carousel('next');
-                });
+            prevButton.click(function () {
+                carousel.carousel('prev');
+                restartCarousel();
             });
+
+            nextButton.click(function () {
+                carousel.carousel('next');
+                restartCarousel();
+            });
+
+            // });
+            // 自動啟動輪播
+            carouselElement.carousel({
+                interval: 5000 // 自動輪播間隔時間（以毫秒為單位）
+            });
+
+            // 重新啟動自動輪播
+            function restartCarousel() {
+                //console.log(1);
+                // 停止自動輪播
+                //carouselElement.carousel('pause');
+
+                // 重新啟動自動輪播
+                setTimeout(function () {
+                    carouselElement.carousel('cycle');
+                }, 100); // 這裡使用延遲是為了確保輪播在停止後能夠正確重新啟動
+            }
         });
 
     </script>
