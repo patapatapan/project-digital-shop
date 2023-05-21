@@ -153,7 +153,7 @@
             height: 50px;
             background-color: rgb(73, 73, 73, 0.5);
             border-radius: 100%;
-            top: 35%;
+            top: 45%;
         }
 
         .swipe-button:hover {
@@ -162,6 +162,7 @@
 
         .col-1 span {
             color: #ffffff;
+            /* top: 35%; */
         }
 
         .info-box {
@@ -181,6 +182,14 @@
             transform: skew(-30deg);
             font-size: smaller;
         }
+
+        /* .prev{
+            top: 35%;
+        }
+
+        .next{
+            top: 45%;
+        } */
     </style>
 </head>
 
@@ -354,7 +363,7 @@
         <!-- 滑動商品列 -->
         <div class="row swipe-list">
             <div class="col">
-                <div class="row d-flex" style="height: 15%;">
+                <div class="row" style="height: 15%;">
                     <div class="col">
                         <span class="">
                             <h2 style="width: fit-content; margin:0 auto 0 auto; padding-bottom: 50px;">
@@ -364,8 +373,14 @@
                     </div>
                 </div>
 
-                <div class="carousel slide project" data-bs-ride="" data-bs-interval="5000" style="height: 85%;">
-                    <div class="row">
+                <div class="carousel slide project" data-bs-ride=".carousel" data-bs-interval="5000" style="height: 85%;">
+                    <div class="row d-flex">
+                        <div class="col-1 p-0" style="position: relative;">
+                            <div class="swipe-button d-flex justify-content-center align-items-center prev"
+                                type="button">
+                                <span>❮</span>
+                            </div>
+                        </div>
                         <div class="col-10 p-0">
                             <div class="carousel-inner">
                                 <div class="carousel-item active" id="1">
@@ -390,9 +405,14 @@
                                                 <img src="img/a2.jpg" alt="">
                                             </div>
                                             <div class="info-box">
-                                                <h2 class="h5 text-info mb-0">地板運動操</h2>
-                                                <p class="mt-0 text-white">讓身體柔軟與訓練反應</p>
-                                                <a href="#" class="btn btn-primary">前往</a>
+                                                <h2 class="h5 text-info mb-0 col-12" style="padding:5px 0 0 5px;">
+                                                    薩爾達-王國之淚</h2>
+                                                <span class="price d-flex" style="width: 80%; justify-content: flex-start; flex-wrap: wrap;">
+                                                    <p class="mt-0 text-white col-12 p-0 m-0 ori-p justify-content-center">NT$ 1790</p>
+                                                    <!-- ori-p => origin price -->
+                                                    <p class="mt-0 text-white col-12 p-0 disc-p">NT$ 1690</p>
+                                                    <!-- disc-p => discount price -->
+                                                </span>
                                             </div>
                                         </div>
                                         <div class="col-3">
@@ -400,9 +420,14 @@
                                                 <img src="img/a3.jpg" alt="">
                                             </div>
                                             <div class="info-box">
-                                                <h2 class="h5 text-info mb-0">地板運動操</h2>
-                                                <p class="mt-0 text-white">讓身體柔軟與訓練反應</p>
-                                                <a href="#" class="btn btn-primary">前往</a>
+                                                <h2 class="h5 text-info mb-0 col-12" style="padding:5px 0 0 5px;">
+                                                    薩爾達-王國之淚</h2>
+                                                <span class="price d-flex" style="width: 80%; justify-content: flex-start; flex-wrap: wrap;">
+                                                    <p class="mt-0 text-white col-12 p-0 m-0 ori-p justify-content-center">NT$ 1790</p>
+                                                    <!-- ori-p => origin price -->
+                                                    <p class="mt-0 text-white col-12 p-0 disc-p">NT$ 1690</p>
+                                                    <!-- disc-p => discount price -->
+                                                </span>
                                             </div>
                                         </div>
                                         <div class="col-3">
@@ -410,9 +435,14 @@
                                                 <img src="img/a4.jpg" alt="">
                                             </div>
                                             <div class="info-box">
-                                                <h2 class="h5 text-info mb-0">地板運動操</h2>
-                                                <p class="mt-0 text-white">讓身體柔軟與訓練反應</p>
-                                                <a href="#" class="btn btn-primary">前往</a>
+                                                <h2 class="h5 text-info mb-0 col-12" style="padding:5px 0 0 5px;">
+                                                    薩爾達-王國之淚</h2>
+                                                <span class="price d-flex" style="width: 80%; justify-content: flex-start; flex-wrap: wrap;">
+                                                    <p class="mt-0 text-white col-12 p-0 m-0 ori-p justify-content-center">NT$ 1790</p>
+                                                    <!-- ori-p => origin price -->
+                                                    <p class="mt-0 text-white col-12 p-0 disc-p">NT$ 1690</p>
+                                                    <!-- disc-p => discount price -->
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -424,9 +454,14 @@
                                                 <img src="img/a5.jpeg" alt="">
                                             </div>
                                             <div class="info-box">
-                                                <h2 class="h5 text-info mb-0">地板運動操</h2>
-                                                <p class="mt-0 text-white">讓身體柔軟與訓練反應</p>
-                                                <a href="#" class="btn btn-primary">前往</a>
+                                                <h2 class="h5 text-info mb-0 col-12" style="padding:5px 0 0 5px;">
+                                                    薩爾達-王國之淚</h2>
+                                                <span class="price d-flex" style="width: 80%; justify-content: flex-start; flex-wrap: wrap;">
+                                                    <p class="mt-0 text-white col-12 p-0 m-0 ori-p justify-content-center">NT$ 1790</p>
+                                                    <!-- ori-p => origin price -->
+                                                    <p class="mt-0 text-white col-12 p-0 disc-p">NT$ 1690</p>
+                                                    <!-- disc-p => discount price -->
+                                                </span>
                                             </div>
                                         </div>
                                         <div class="col-3">
@@ -434,9 +469,14 @@
                                                 <img src="img/a6.jpg" alt="">
                                             </div>
                                             <div class="info-box">
-                                                <h2 class="h5 text-info mb-0">地板運動操</h2>
-                                                <p class="mt-0 text-white">讓身體柔軟與訓練反應</p>
-                                                <a href="#" class="btn btn-primary">前往</a>
+                                                <h2 class="h5 text-info mb-0 col-12" style="padding:5px 0 0 5px;">
+                                                    薩爾達-王國之淚</h2>
+                                                <span class="price d-flex" style="width: 80%; justify-content: flex-start; flex-wrap: wrap;">
+                                                    <p class="mt-0 text-white col-12 p-0 m-0 ori-p justify-content-center">NT$ 1790</p>
+                                                    <!-- ori-p => origin price -->
+                                                    <p class="mt-0 text-white col-12 p-0 disc-p">NT$ 1690</p>
+                                                    <!-- disc-p => discount price -->
+                                                </span>
                                             </div>
                                         </div>
                                         <div class="col-3">
@@ -444,9 +484,14 @@
                                                 <img src="img/a7.jpg" alt="">
                                             </div>
                                             <div class="info-box">
-                                                <h2 class="h5 text-info mb-0">地板運動操</h2>
-                                                <p class="mt-0 text-white">讓身體柔軟與訓練反應</p>
-                                                <a href="#" class="btn btn-primary">前往</a>
+                                                <h2 class="h5 text-info mb-0 col-12" style="padding:5px 0 0 5px;">
+                                                    薩爾達-王國之淚</h2>
+                                                <span class="price d-flex" style="width: 80%; justify-content: flex-start; flex-wrap: wrap;">
+                                                    <p class="mt-0 text-white col-12 p-0 m-0 ori-p justify-content-center">NT$ 1790</p>
+                                                    <!-- ori-p => origin price -->
+                                                    <p class="mt-0 text-white col-12 p-0 disc-p">NT$ 1690</p>
+                                                    <!-- disc-p => discount price -->
+                                                </span>
                                             </div>
                                         </div>
                                         <div class="col-3">
@@ -454,24 +499,23 @@
                                                 <img src="img/a8.jpg" alt="">
                                             </div>
                                             <div class="info-box">
-                                                <h2 class="h5 text-info mb-0">地板運動操</h2>
-                                                <p class="mt-0 text-white">讓身體柔軟與訓練反應</p>
-                                                <a href="#" class="btn btn-primary">前往</a>
+                                                <h2 class="h5 text-info mb-0 col-12" style="padding:5px 0 0 5px;">
+                                                    薩爾達-王國之淚</h2>
+                                                <span class="price d-flex" style="width: 80%; justify-content: flex-start; flex-wrap: wrap;">
+                                                    <p class="mt-0 text-white col-12 p-0 m-0 ori-p justify-content-center">NT$ 1790</p>
+                                                    <!-- ori-p => origin price -->
+                                                    <p class="mt-0 text-white col-12 p-0 disc-p">NT$ 1690</p>
+                                                    <!-- disc-p => discount price -->
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-1 p-0" style="order: -1;">
-                            <div class="swipe-button d-flex justify-content-center align-items-center prev"
-                                type="button">
-                                <span>❮</span>
-                            </div>
-                        </div>
-                        <div class="col-1 p-0" style="position: relative;">
+                        </div>                        
+                        <div class="col-1 p-0 d-flex justify-content-end" style="position: relative;">
                             <div class="swipe-button d-flex justify-content-center align-items-center next"
-                                style="margin-left: 10px;" type="button"><span>❯</span>
+                            type="button"><span>❯</span>
                             </div>
                         </div>
                     </div>
