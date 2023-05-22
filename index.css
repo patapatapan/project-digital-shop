@@ -1,178 +1,249 @@
-/* 媒體查詢：大於等於 768px 的裝置*/
-@media screen and (min-width: 768px) {
-    .user{
-        order: 1;
-    }
-
-    .menu{
-        justify-content: center;
-    }
-
-    ul{
-        justify-content: center;
-    }
-
-    #search-button1{
-        display: block;
-    }
-
-    #search-button2 {
-        display: none;
-    }
-} 
-
-/* 媒體查詢：小於 768px 的裝置 */
-@media screen and (max-width: 767px) {
-    /* 按鈕置左 */
-        .navbar-toggler {
-            order: -1;
-            margin-right: auto;
-            margin-left: 10px;
-        }
-    
-        /* 導覽列置左 */
-        .menu {
-            justify-content: start;
-            /*導覽列成豎狀*/
-            flex-direction: column;
-            margin-top: 10px;
-        }
-
-        img {
-            display: block;
-            margin: 0 auto;
-        }
-
-        #search-button1 {
-            display: none;
-        }
-
-        #search-button2 {
-            display: block;
-        }
-}
-
-/*背景顏色*/
-body{
-    background-color: rgba(221, 221, 221, 0.5);
-    
-}
-
-.navbar{
-    background-color:rgb(73, 73, 73);
-    /*導覽列背景顏色*/
-}
-
-img{
-    width:40px ;
-    height:40px ;
-    margin-left: 10px;
-}
-
-li{
-    list-style: none;
-}
-
-button{
-    float: left;
-}
-
-.navbar-nav{
-    justify-content:center;
-    text-align: center;
-}
-
-/*漢堡包顏色*/
-.custom-toggler {
-    border-color: #ffffff;
-    /* 改變邊框顏色 */
-}
-
-.custom-toggler .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    /* 改變 toggle icon 的顏色 */
-}
-
-/* 導覽列項目 */
-/* 滑過去變色 */
-.nav-item:hover{
-    background-color: rgb(130, 130, 130);
-    border-radius: 15px;
-}
-
-/* 頁籤顏色 */
-.nav-pills .nav-link.active{
-    background-color: rgb(130, 130, 130);
-    opacity: 1;
-}
-
-/* 點擊頁籤變色 */
-.nav-link.active,
-.show>.nav-link {
-        background-color: rgb(130, 130, 130);
-        opacity: 1;
-        border-radius: 15px;
-}
-
-.user{
+/* 輪播圖的css */
+.shop-list {
+    width: 75%;
+    max-width: 1600px;
+    aspect-ratio: 16/9;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
+}
+
+.carousel-inner {
+
+    border-radius: 30px;
+}
+
+.carousel-item img {
+    margin-left: 0;
+
+}
+
+.shop-list .col-9 {
+    padding: 0;
+    height: 75%;
+}
+
+.shop-list .col-3 {
+    padding: 0;
+
+    height: 75%;
+}
+
+/*輪播圖的ul*/
+.picShow {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0;
+}
+
+.li-box {
+    width: 85%;
+    height: 19%;
+    border-radius: 15px;
+    float: right;
+    border: 1px solid rgba(160, 160, 160, 0.5);
+}
+
+/*.x+.x 指上一個元素跟自己同為x時 才會生效的css*/
+.li-box+.li-box {
+    margin-top: 2%;
+}
+
+.li-box li {
+    width: 100%;
+    height: 100%;
+}
+
+.li-box:hover {
+    border-radius: 10px;
+    background-color: rgb(109, 109, 109);
+}
+
+.li-box img {
+    margin: 0;
+    width: 60%;
+    height: 70%;
+    border-radius: 10px;
+}
+
+li .row {
+    margin: 0;
+    width: 100%;
+    height: 100%;
     align-items: center;
+}
+
+.col-4 {
+    padding: 0;
+}
+
+.col-8 {
+    padding: 0;
+}
+
+/* 滑動商品列的寬 高 置中 */
+.swipe-list {
+    width: 75%;
+    aspect-ratio: 16/9;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.swipe-list .carousel-inner {
+    border-radius: 0;
+}
+
+.swipe-list .col {
+    padding: 0;
+}
+
+/*優惠商品區的父層設定 可以讓剩餘的子元素填滿剩餘高度*/
+.swipe-list .project .col-3 {
+    display: flex;
+    flex-direction: column;
+}
+
+/*優惠商品的圖片比例 9/14*/
+.aspect-ratio-container {
+    width: 100%;
+    padding-bottom: 140%;
+    position: relative;
+}
+
+.aspect-ratio-container>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px 30px 0 0;
+    flex-grow: 1;
+}
+
+.swipe-button {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(73, 73, 73, 0.5);
+    border-radius: 100%;
+    top: 45%;
+}
+
+.swipe-button:hover {
+    background-color: rgb(73, 73, 73);
+}
+
+.col-1 span {
+    color: #ffffff;
+    /* top: 35%; */
+}
+
+.info-box {
+    background-color: rgb(73, 73, 73);
+    opacity: 0.7;
+    width: 100%;
+    border-radius: 0 0 30px 30px;
+    /*height: 30%;*/
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.price {
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
+    /*flex-wrap: wrap;*/
+}
+
+.price .col-8 span {
+    width: 60px;
+    height: 40px;
+    background-color: rgb(255, 136, 0);
+    border-radius: 10px 10px 10px 10px;
+    display: flex;
     justify-content: center;
-    white-space: nowrap;
-    /* 防止图标换行 */
+    align-items: center;
 }
 
-.icon{
-    opacity: 0.5;
+.ori-p {
+    text-decoration: line-through;
+    transform: skew(-25deg);
+    font-size: 12px;
+    display: flex;
+    justify-content: end;
+    /*將元素置右*/
 }
 
-.icon:hover{
-    opacity: 1;
+.disc-p {
+    font-size: 16px;
+    display: flex;
+    justify-content: end;
+    /*將元素置右*/
 }
 
-/*燈箱搜尋框*/
-.modal-content {
-    transform: translate(0, -330%);
+@media (max-width: 767px) {
+    .ori-p {
+        font-size: 8px;
+    }
+
+    .disc-p {
+        font-size: 12px;
+    }
 }
 
-#search{
-    width: 80%;
-    display: inline-block;
-    vertical-align: middle;
+.ad {
+    width: 100%;
+    height: 270px;
+    background-image: linear-gradient(20deg, #51595c, #87868a);
+    background-size: 100% 150%;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
-.modal-content {
-  background-color: transparent;
-  box-shadow: none;
-  border: none;
+.footer button {
+    width: 60px;
+    height: 40px;
+    border-radius: 10px;
+    border-style: hidden;
+    background-image: linear-gradient(20deg, yellow,
+            orange);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* 搜尋按鈕設定 */
-i:hover{
-    opacity: 1;
+.footer button:hover {
+    background-image: linear-gradient(20deg, orange,
+            yellow);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
-.fa-solid {
-    width: 38px;
-    height: 38px;
-    display: inline-block;
-    vertical-align: middle;
-    background-color: rgb(161, 161, 161);
-    opacity: 0.5;
+.footer-content{
+    color: rgba(224, 224, 224, 0.9);
 }
 
-.fa-xl{
-    font-size : 26px;
-    color: aliceblue;
+.footer-content a{
+    font-size: 16;
+    text-decoration: none;
 }
 
-.fa-xl::before{
-    line-height: 2.5rem;
-    margin-left: 8px;
-}
+@media (min-width: 768px) {
+    .price {
+        width: 90%;
+        display: flex;
+        justify-content: flex-start;
+        /*flex-wrap: wrap;*/
+    }
 
-.half-rounded{
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    .ori-p {
+        text-decoration: line-through;
+        transform: skew(-25deg);
+        font-size: 12px;
+        display: flex;
+        justify-content: end;
+        /*將元素置右*/
+    }
 }
-

@@ -19,178 +19,8 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
     <!-- <link rel="stylesheet" href="bootstrap-5.3.0-alpha3-dist/js/bootstrap.bundle.min.js"> -->
-    <title>OrderWeb</title>
-    <script>
+    <title>歡迎來到FunPlay!!</title>
 
-    </script>
-    <style>
-        /* 輪播圖的css */
-        .shop-list {
-            width: 75%;
-            max-width: 1600px;
-            aspect-ratio: 16/9;
-            margin-left: auto;
-            margin-right: auto;
-            display: flex;
-        }
-
-        .carousel-inner {
-
-            border-radius: 30px;
-        }
-
-        .carousel-item img {
-            margin-left: 0;
-
-        }
-
-        .shop-list .col-9 {
-            padding: 0;
-            height: 75%;
-        }
-
-        .shop-list .col-3 {
-            padding: 0;
-
-            height: 75%;
-        }
-
-        /*輪播圖的ul*/
-        .picShow {
-            width: 100%;
-            height: 100%;
-            margin-bottom: 0;
-        }
-
-        .li-box {
-            width: 85%;
-            height: 19%;
-            border-radius: 15px;
-            float: right;
-            border: 1px solid rgba(160, 160, 160, 0.5);
-        }
-
-        /*.x+.x 指上一個元素跟自己同為x時 才會生效的css*/
-        .li-box+.li-box {
-            margin-top: 2%;
-        }
-
-        .li-box li {
-            width: 100%;
-            height: 100%;
-        }
-
-        .li-box:hover {
-            border-radius: 10px;
-            background-color: rgb(109, 109, 109);
-        }
-
-        .li-box img {
-            margin: 0;
-            width: 60%;
-            height: 70%;
-            border-radius: 10px;
-        }
-
-        li .row {
-            margin: 0;
-            width: 100%;
-            height: 100%;
-            align-items: center;
-        }
-
-        .col-4 {
-            padding: 0;
-        }
-
-        .col-8 {
-            padding: 0;
-        }
-
-        /* 滑動商品列的寬 高 置中 */
-        .swipe-list {
-            width: 75%;
-            aspect-ratio: 16/9;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .swipe-list .carousel-inner {
-            border-radius: 0;
-        }
-
-        .swipe-list .col {
-            padding: 0;
-        }
-
-        /*優惠商品區的父層設定 可以讓剩餘的子元素填滿剩餘高度*/
-        .swipe-list .project .col-3 {
-            display: flex;
-            flex-direction: column;
-        }
-
-        /*優惠商品的圖片比例 9/14*/
-        .aspect-ratio-container {
-            width: 100%;
-            padding-bottom: 140%;
-            position: relative;
-        }
-
-        .aspect-ratio-container>img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 30px 30px 0 0;
-            flex-grow: 1;
-        }
-
-        .swipe-button {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background-color: rgb(73, 73, 73, 0.5);
-            border-radius: 100%;
-            top: 45%;
-        }
-
-        .swipe-button:hover {
-            background-color: rgb(73, 73, 73);
-        }
-
-        .col-1 span {
-            color: #ffffff;
-            /* top: 35%; */
-        }
-
-        .info-box {
-            background-color: rgb(73, 73, 73);
-            opacity: 0.7;
-            width: 100%;
-            border-radius: 0 0 30px 30px;
-            /*height: 30%;*/
-            flex-grow: 1;
-            display: flex;
-            justify-content: flex-start;
-            flex-wrap: wrap;
-        }
-
-        .ori-p {
-            text-decoration: line-through;
-            transform: skew(-30deg);
-            font-size: smaller;
-        }
-
-        /* .prev{
-            top: 35%;
-        }
-
-        .next{
-            top: 45%;
-        } */
-    </style>
 </head>
 
 <body>
@@ -218,8 +48,6 @@
                         </div>
                     </div>
                 </div>
-
-
 
                 <div class="navbar fixed-top navbar-expand-md">
                     <!-- <h1>title</h1> -->
@@ -254,9 +82,6 @@
                             </svg>
                         </span>
                     </div>
-
-
-
 
                     <!-- 導覽列 -->
                     <div class="collapse navbar-collapse menu mr-auto" id="menu">
@@ -373,7 +198,8 @@
                     </div>
                 </div>
 
-                <div class="carousel slide project" data-bs-ride=".carousel" data-bs-interval="5000" style="height: 85%;">
+                <div class="carousel slide project" data-bs-ride=".carousel" data-bs-interval="5000"
+                    style="height: 85%;">
                     <div class="row d-flex">
                         <div class="col-1 p-0" style="position: relative;">
                             <div class="swipe-button d-flex justify-content-center align-items-center prev"
@@ -390,14 +216,21 @@
                                                 <img src="img/a1.jpg" alt="">
                                             </div>
                                             <div class="info-box">
-                                                <h2 class="h5 text-info mb-0 col-12" style="padding:5px 0 0 5px;">
+                                                <h2 class="h5 text-info mb-0 col-12" style="padding:10px 0 0 10px;">
                                                     薩爾達-王國之淚</h2>
-                                                <span class="price d-flex" style="width: 80%; justify-content: flex-start; flex-wrap: wrap;">
-                                                    <p class="mt-0 text-white col-12 p-0 m-0 ori-p justify-content-center">NT$ 1790</p>
-                                                    <!-- ori-p => origin price -->
-                                                    <p class="mt-0 text-white col-12 p-0 disc-p">NT$ 1690</p>
-                                                    <!-- disc-p => discount price -->
-                                                </span>
+                                                <div class="price">
+                                                    <div class="col-8 d-flex justify-content-end align-items-center"
+                                                        style="padding-right: 5%;">
+                                                        <span class="text-white">-50%</span>
+                                                    </div>
+                                                    <div class="d-flex col-4 p-0" style="flex-wrap: wrap;">
+                                                        <p class="mt-0 text-white col-12 pt-3 m-0 ori-p">
+                                                            NT$ 1790</p>
+                                                        <!-- ori-p => origin price -->
+                                                        <p class="mt-0 text-white col-12 p-0 disc-p">NT$ 1690</p>
+                                                        <!-- disc-p => discount price -->
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-3">
@@ -405,14 +238,21 @@
                                                 <img src="img/a2.jpg" alt="">
                                             </div>
                                             <div class="info-box">
-                                                <h2 class="h5 text-info mb-0 col-12" style="padding:5px 0 0 5px;">
+                                                <h2 class="h5 text-info mb-0 col-12" style="padding:10px 0 0 10px;">
                                                     薩爾達-王國之淚</h2>
-                                                <span class="price d-flex" style="width: 80%; justify-content: flex-start; flex-wrap: wrap;">
-                                                    <p class="mt-0 text-white col-12 p-0 m-0 ori-p justify-content-center">NT$ 1790</p>
-                                                    <!-- ori-p => origin price -->
-                                                    <p class="mt-0 text-white col-12 p-0 disc-p">NT$ 1690</p>
-                                                    <!-- disc-p => discount price -->
-                                                </span>
+                                                <div class="price">
+                                                    <div class="col-8 d-flex justify-content-end align-items-center"
+                                                        style="padding-right: 5%;">
+                                                        <span class="text-white">-50%</span>
+                                                    </div>
+                                                    <div class="d-flex col-4 p-0" style="flex-wrap: wrap;">
+                                                        <p class="mt-0 text-white col-12 pt-3 m-0 ori-p">
+                                                            NT$ 1790</p>
+                                                        <!-- ori-p => origin price -->
+                                                        <p class="mt-0 text-white col-12 p-0 disc-p">NT$ 1690</p>
+                                                        <!-- disc-p => discount price -->
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-3">
@@ -420,14 +260,21 @@
                                                 <img src="img/a3.jpg" alt="">
                                             </div>
                                             <div class="info-box">
-                                                <h2 class="h5 text-info mb-0 col-12" style="padding:5px 0 0 5px;">
+                                                <h2 class="h5 text-info mb-0 col-12" style="padding:10px 0 0 10px;">
                                                     薩爾達-王國之淚</h2>
-                                                <span class="price d-flex" style="width: 80%; justify-content: flex-start; flex-wrap: wrap;">
-                                                    <p class="mt-0 text-white col-12 p-0 m-0 ori-p justify-content-center">NT$ 1790</p>
-                                                    <!-- ori-p => origin price -->
-                                                    <p class="mt-0 text-white col-12 p-0 disc-p">NT$ 1690</p>
-                                                    <!-- disc-p => discount price -->
-                                                </span>
+                                                <div class="price">
+                                                    <div class="col-8 d-flex justify-content-end align-items-center"
+                                                        style="padding-right: 5%;">
+                                                        <span class="text-white">-50%</span>
+                                                    </div>
+                                                    <div class="d-flex col-4 p-0" style="flex-wrap: wrap;">
+                                                        <p class="mt-0 text-white col-12 pt-3 m-0 ori-p">
+                                                            NT$ 1790</p>
+                                                        <!-- ori-p => origin price -->
+                                                        <p class="mt-0 text-white col-12 p-0 disc-p">NT$ 1690</p>
+                                                        <!-- disc-p => discount price -->
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-3">
@@ -435,14 +282,21 @@
                                                 <img src="img/a4.jpg" alt="">
                                             </div>
                                             <div class="info-box">
-                                                <h2 class="h5 text-info mb-0 col-12" style="padding:5px 0 0 5px;">
+                                                <h2 class="h5 text-info mb-0 col-12" style="padding:10px 0 0 10px;">
                                                     薩爾達-王國之淚</h2>
-                                                <span class="price d-flex" style="width: 80%; justify-content: flex-start; flex-wrap: wrap;">
-                                                    <p class="mt-0 text-white col-12 p-0 m-0 ori-p justify-content-center">NT$ 1790</p>
-                                                    <!-- ori-p => origin price -->
-                                                    <p class="mt-0 text-white col-12 p-0 disc-p">NT$ 1690</p>
-                                                    <!-- disc-p => discount price -->
-                                                </span>
+                                                <div class="price">
+                                                    <div class="col-8 d-flex justify-content-end align-items-center"
+                                                        style="padding-right: 5%;">
+                                                        <span class="text-white">-50%</span>
+                                                    </div>
+                                                    <div class="d-flex col-4 p-0" style="flex-wrap: wrap;">
+                                                        <p class="mt-0 text-white col-12 pt-3 m-0 ori-p">
+                                                            NT$ 1790</p>
+                                                        <!-- ori-p => origin price -->
+                                                        <p class="mt-0 text-white col-12 p-0 disc-p">NT$ 1690</p>
+                                                        <!-- disc-p => discount price -->
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -454,14 +308,21 @@
                                                 <img src="img/a5.jpeg" alt="">
                                             </div>
                                             <div class="info-box">
-                                                <h2 class="h5 text-info mb-0 col-12" style="padding:5px 0 0 5px;">
+                                                <h2 class="h5 text-info mb-0 col-12" style="padding:10px 0 0 10px;">
                                                     薩爾達-王國之淚</h2>
-                                                <span class="price d-flex" style="width: 80%; justify-content: flex-start; flex-wrap: wrap;">
-                                                    <p class="mt-0 text-white col-12 p-0 m-0 ori-p justify-content-center">NT$ 1790</p>
-                                                    <!-- ori-p => origin price -->
-                                                    <p class="mt-0 text-white col-12 p-0 disc-p">NT$ 1690</p>
-                                                    <!-- disc-p => discount price -->
-                                                </span>
+                                                <div class="price">
+                                                    <div class="col-8 d-flex justify-content-end align-items-center"
+                                                        style="padding-right: 5%;">
+                                                        <span class="text-white">-50%</span>
+                                                    </div>
+                                                    <div class="d-flex col-4 p-0" style="flex-wrap: wrap;">
+                                                        <p class="mt-0 text-white col-12 pt-3 m-0 ori-p">
+                                                            NT$ 1790</p>
+                                                        <!-- ori-p => origin price -->
+                                                        <p class="mt-0 text-white col-12 p-0 disc-p">NT$ 1690</p>
+                                                        <!-- disc-p => discount price -->
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-3">
@@ -469,14 +330,21 @@
                                                 <img src="img/a6.jpg" alt="">
                                             </div>
                                             <div class="info-box">
-                                                <h2 class="h5 text-info mb-0 col-12" style="padding:5px 0 0 5px;">
+                                                <h2 class="h5 text-info mb-0 col-12" style="padding:10px 0 0 10px;">
                                                     薩爾達-王國之淚</h2>
-                                                <span class="price d-flex" style="width: 80%; justify-content: flex-start; flex-wrap: wrap;">
-                                                    <p class="mt-0 text-white col-12 p-0 m-0 ori-p justify-content-center">NT$ 1790</p>
-                                                    <!-- ori-p => origin price -->
-                                                    <p class="mt-0 text-white col-12 p-0 disc-p">NT$ 1690</p>
-                                                    <!-- disc-p => discount price -->
-                                                </span>
+                                                <div class="price">
+                                                    <div class="col-8 d-flex justify-content-end align-items-center"
+                                                        style="padding-right: 5%;">
+                                                        <span class="text-white">-50%</span>
+                                                    </div>
+                                                    <div class="d-flex col-4 p-0" style="flex-wrap: wrap;">
+                                                        <p class="mt-0 text-white col-12 pt-3 m-0 ori-p">
+                                                            NT$ 1790</p>
+                                                        <!-- ori-p => origin price -->
+                                                        <p class="mt-0 text-white col-12 p-0 disc-p">NT$ 1690</p>
+                                                        <!-- disc-p => discount price -->
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-3">
@@ -484,14 +352,21 @@
                                                 <img src="img/a7.jpg" alt="">
                                             </div>
                                             <div class="info-box">
-                                                <h2 class="h5 text-info mb-0 col-12" style="padding:5px 0 0 5px;">
+                                                <h2 class="h5 text-info mb-0 col-12" style="padding:10px 0 0 10px;">
                                                     薩爾達-王國之淚</h2>
-                                                <span class="price d-flex" style="width: 80%; justify-content: flex-start; flex-wrap: wrap;">
-                                                    <p class="mt-0 text-white col-12 p-0 m-0 ori-p justify-content-center">NT$ 1790</p>
-                                                    <!-- ori-p => origin price -->
-                                                    <p class="mt-0 text-white col-12 p-0 disc-p">NT$ 1690</p>
-                                                    <!-- disc-p => discount price -->
-                                                </span>
+                                                <div class="price">
+                                                    <div class="col-8 d-flex justify-content-end align-items-center"
+                                                        style="padding-right: 5%;">
+                                                        <span class="text-white">-50%</span>
+                                                    </div>
+                                                    <div class="d-flex col-4 p-0" style="flex-wrap: wrap;">
+                                                        <p class="mt-0 text-white col-12 pt-3 m-0 ori-p">
+                                                            NT$ 1790</p>
+                                                        <!-- ori-p => origin price -->
+                                                        <p class="mt-0 text-white col-12 p-0 disc-p">NT$ 1690</p>
+                                                        <!-- disc-p => discount price -->
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-3">
@@ -499,23 +374,30 @@
                                                 <img src="img/a8.jpg" alt="">
                                             </div>
                                             <div class="info-box">
-                                                <h2 class="h5 text-info mb-0 col-12" style="padding:5px 0 0 5px;">
+                                                <h2 class="h5 text-info mb-0 col-12" style="padding:10px 0 0 10px;">
                                                     薩爾達-王國之淚</h2>
-                                                <span class="price d-flex" style="width: 80%; justify-content: flex-start; flex-wrap: wrap;">
-                                                    <p class="mt-0 text-white col-12 p-0 m-0 ori-p justify-content-center">NT$ 1790</p>
-                                                    <!-- ori-p => origin price -->
-                                                    <p class="mt-0 text-white col-12 p-0 disc-p">NT$ 1690</p>
-                                                    <!-- disc-p => discount price -->
-                                                </span>
+                                                <div class="price">
+                                                    <div class="col-8 d-flex justify-content-end align-items-center"
+                                                        style="padding-right: 5%;">
+                                                        <span class="text-white">-50%</span>
+                                                    </div>
+                                                    <div class="d-flex col-4 p-0" style="flex-wrap: wrap;">
+                                                        <p class="mt-0 text-white col-12 pt-3 m-0 ori-p">
+                                                            NT$ 1790</p>
+                                                        <!-- ori-p => origin price -->
+                                                        <p class="mt-0 text-white col-12 p-0 disc-p">NT$ 1690</p>
+                                                        <!-- disc-p => discount price -->
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>                        
+                        </div>
                         <div class="col-1 p-0 d-flex justify-content-end" style="position: relative;">
                             <div class="swipe-button d-flex justify-content-center align-items-center next"
-                            type="button"><span>❯</span>
+                                type="button"><span>❯</span>
                             </div>
                         </div>
                     </div>
@@ -523,12 +405,29 @@
             </div>
         </div>
 
+        <!-- 資訊欄or宣傳版 -->
+        <div class="ad text-white">
+            <div class="footer">
+                <h4 class="footer-title text-info d-flex justify-content-center">尋找屬於你的樂趣吧!!</h4>
+            </div>
+            <div class="footer p-4 d-flex justify-content-center" style="flex-wrap: wrap;">
+                <p class="footer-content  d-flex justify-content-center col-12" style="font-size: 18px;">登入以使用更多社群功能</p>
+                <button class="login col-12" onclick="redirectToLogin()">登入</button>
+                <p class="footer-content  d-flex justify-content-center col-12 pt-3" style="font-size: 14px;">
+                    點擊 &nbsp;
+                    <a href="#" class="text-white">註冊</a>
+                    &nbsp; 加入會員
+                </p>
+            </div>
+        </div>
+
         <!-- 底部版權 -->
-        <div class="row mt-5">
+        <div class=" row mt-5">
 
             <div class="col m-0 p-5" style="background-color:rgb(73, 73, 73)">
                 <hr style="margin:0 auto; width: 90%; color: #ffffff;">
-                <div class="text-center text-white mt-5">-&copy;2023 Patapatapan 版權所有 參考Epic Games , Steam , Electronic
+                <div class="text-center text-white mt-5">-&copy;2023 Patapatapan 版權所有 參考Epic Games , Steam ,
+                    Electronic
                     Arts ,
                     Ubisoft 無商業利益 純個人練習 。-</div>
             </div>
@@ -562,6 +461,7 @@
             var carousel = $('.carousel.project');
             var prevButton = $('.swipe-button.prev');
             var nextButton = $('.swipe-button.next');
+            // var carouselElement = $('.swipe-list.project.carousel');
 
             prevButton.click(function () {
                 carousel.carousel('prev');
@@ -575,9 +475,14 @@
 
             // });
             // 自動啟動輪播
-            carouselElement.carousel({
-                interval: 5000 // 自動輪播間隔時間（以毫秒為單位）
-            });
+            // carouselElement.carousel({
+            //     interval: 3000 // 自動輪播間隔時間（以毫秒為單位）
+            // });
+            // setTimeout(function () {
+            //     carouselElement.carousel({
+            //         interval: 3000 // 自動輪播間隔時間（以毫秒為單位）
+            //     });
+            // }, 100);
 
             // 重新啟動自動輪播
             function restartCarousel() {
@@ -591,6 +496,11 @@
                 }, 100); // 這裡使用延遲是為了確保輪播在停止後能夠正確重新啟動
             }
         });
+
+        function redirectToLogin() {
+            // 執行頁面跳轉
+            window.location.href = 'login.html';
+        }
 
     </script>
 

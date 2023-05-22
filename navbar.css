@@ -57,6 +57,11 @@ body{
     background-color: rgba(221, 221, 221, 0.5);
 }
 
+/*隱藏超過寬度*/
+.container-fluid{
+    overflow-x: hidden;
+}
+
 .navbar{
     background-color:rgb(73, 73, 73);
     /*導覽列背景顏色*/
