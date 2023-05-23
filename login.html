@@ -39,18 +39,89 @@
             padding: 50px 25px 50px 25px;
         }
 
-        input {
+        /* input {
             width: 100%;
             height: 40px;
             border: 0.5px solid rgba(29, 29, 29, 0.3);
             border-radius: 5px;
             margin: 5px 0;
-        }
+        } */
 
+        /*點選輸入框時的樣式*/
         input:focus {
             outline: 1px solid black;
             /* 設置黑邊的寬度和顏色 */
         }
+
+        input[type="text"] {
+            width: 100%;
+            height: 40px;
+            border: 0.5px solid rgba(29, 29, 29, 0.3);
+            border-radius: 5px;
+            margin: 5px 0;
+            padding: 4px 1px 4px 5px;
+        }
+
+        input[type="password"] {
+            width: 100%;
+            height: 40px;
+            border: 0.5px solid rgba(29, 29, 29, 0.3);
+            border-radius: 5px;
+            margin: 5px 0;
+            padding: 4px 1px 4px 5px;
+        }
+
+        .pwd {
+            position: relative;
+        }
+
+        .pwd button {
+            width: 36px;
+            height: 36px;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            background-color: rgba(255, 255, 255, 0);
+            padding: 0;
+            display: flex;
+            right: 1px;
+            top: 7px;
+        }
+
+        /*勾選欄位區塊*/
+        .check-box {
+            width: 100%;
+            height: 100%;
+            display: inline-flex;
+            padding: 0;
+            margin: 0;
+            justify-content: start;
+            align-items: center;
+        }
+
+        .check-box li {
+            left: 1px;
+            position: relative;
+            margin-left: 3px;
+        }
+
+        /*明碼暗碼切換鈕css*/
+        .fa-eye {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* .fa-eye-slash {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        } */
     </style>
 </head>
 
@@ -75,38 +146,57 @@
             <div class="form-box">
                 <form action="">
                     <input type="text" name="userid" placeholder="帳號">
-                    <input type="text" name="password" placeholder="密碼">
-                    <i class="fa-solid fa-eye" style="background-color: #ffffff; width: 30px; height: 30px;"></i>
-                    <i class="fa-solid fa-eye-slash" style="background-color: #ffffff; width: 30px; height: 30px;""></i>
+                    <div class="pwd">
+                        <input type="password" name="password" placeholder="密碼">
+                        <button onclick="login.changePwdType(this)"><i class="fa-solid fa-eye"
+                                style="width: 35px; height: 35px;"></i></button>
+                    </div>
+                    <div class="" style="width: 100%; height: 40px;">
+                        <ul class="check-box">
+                            <li>
+                                <div class="remember">
+                                    <input type="checkbox">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="keeplogin">
+                                    <input type="checkbox">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <!-- <i class="fa-solid fa-eye-slash"></i> -->
                 </form>
             </div>
         </div>
 
         <!-- 底部版權 -->
         <div class=" row mt-5">
-                        <div class="col m-0 p-5" style="background-color:rgb(73, 73, 73)">
-                            <hr style="margin:0 auto; width: 90%; color: #ffffff;">
-                            <div class="text-center text-white mt-5">-&copy;2023 Patapatapan 版權所有 參考Epic Games , Steam ,
-                                Electronic
-                                Arts ,
-                                Ubisoft 無商業利益 純個人練習 。-</div>
-                        </div>
+            <div class="col m-0 p-5" style="background-color:rgb(73, 73, 73)">
+                <hr style="margin:0 auto; width: 90%; color: #ffffff;">
+                <div class="text-center text-white mt-5">-&copy;2023 Patapatapan 版權所有 參考Epic Games , Steam ,
+                    Electronic
+                    Arts ,
+                    Ubisoft 無商業利益 純個人練習 。-</div>
             </div>
-
         </div>
-        <script>
-            // 當 modal 展開時
-            $('#search-box').on('shown.bs.modal', function () {
-                // 隱藏按鈕
-                $('#menu').hide();
-            })
 
-            $('#search-box').on('hidden.bs.modal', function () {
-                // 顯示按鈕
-                $('#menu').show();
-            })
+    </div>
+    <script>
+        // 當 modal 展開時
+        $('#search-box').on('shown.bs.modal', function () {
+            // 隱藏按鈕
+            $('#menu').hide();
+        })
 
-        </script>
+        $('#search-box').on('hidden.bs.modal', function () {
+            // 顯示按鈕
+            $('#menu').show();
+        })
+
+    </script>
 
 </body>
 
