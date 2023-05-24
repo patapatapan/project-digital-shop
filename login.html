@@ -39,14 +39,6 @@
             padding: 50px 25px 50px 25px;
         }
 
-        /* input {
-            width: 100%;
-            height: 40px;
-            border: 0.5px solid rgba(29, 29, 29, 0.3);
-            border-radius: 5px;
-            margin: 5px 0;
-        } */
-
         /*點選輸入框時的樣式*/
         input:focus {
             outline: 1px solid black;
@@ -89,6 +81,60 @@
             top: 7px;
         }
 
+        .remember {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .remember .r-c {
+            width: 18px;
+            height: 18px;
+            /* appearance: none; */
+            /* 禁用默認樣式 */
+            -webkit-appearance: none;
+            /* -moz-appearance: none; */
+            border-radius: 50%;
+            /* 將複選框變為圓形 */
+            border: 1px solid #000;
+            /* 設置邊框樣式 */
+            outline: none;
+            /* 去除聚焦时的外邊框 */
+            margin-right: 5px;
+            position: relative;
+        }
+
+        .r-c:hover {
+            cursor: pointer;
+        }
+
+        .keeplogin {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .keeplogin .k-c {
+            width: 18px;
+            height: 18px;
+            /* appearance: none; */
+            /* 禁用默認樣式 */
+            -webkit-appearance: none;
+            /* -moz-appearance: none; */
+            border-radius: 50%;
+            /* 將複選框變為圓形 */
+            border: 1px solid #000;
+            /* 設置邊框樣式 */
+            outline: none;
+            /* 去除聚焦时的外邊框 */
+            margin-right: 5px;
+            position: relative;
+        }
+
+        .k-c:hover {
+            cursor: pointer;
+        }
+
         /*勾選欄位區塊*/
         .check-box {
             width: 100%;
@@ -115,13 +161,30 @@
             align-items: center;
         }
 
-        /* .fa-eye-slash {
+        .fa-eye-slash {
             position: absolute;
             background-color: rgba(255, 255, 255, 0);
             display: flex;
             justify-content: center;
             align-items: center;
-        } */
+        }
+
+        /*預設勾選隱藏*/
+        #circle1 {
+            position: absolute;
+            left: 1px;
+            color: #ffffff;
+            display: none;
+            pointer-events: none;
+        }
+
+        #circle2 {
+            position: absolute;
+            left: 1px;
+            color: #ffffff;
+            display: none;
+            pointer-events: none;
+        }
     </style>
 </head>
 
@@ -145,24 +208,32 @@
         <div class="login">
             <div class="form-box">
                 <form action="">
-                    <input type="text" name="userid" placeholder="帳號">
+                    <input type="text" name="userid" placeholder="帳號" id="userid">
                     <div class="pwd">
-                        <input type="password" name="password" placeholder="密碼">
-                        <button onclick="login.changePwdType(this)"><i class="fa-solid fa-eye"
-                                style="width: 35px; height: 35px;"></i></button>
+                        <input type="password" name="password" placeholder="密碼" id="pwd">
+                        <button onclick="changePwdType()" type="button"><i class="fa-solid fa-eye"></i></button>
                     </div>
                     <div class="" style="width: 100%; height: 40px;">
                         <ul class="check-box">
                             <li>
                                 <div class="remember">
-                                    <input type="checkbox">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <input type="checkbox" class="r-c">
+                                        <i class="fa-regular fa-circle-check" id="circle1"></i>
+                                    </div>
+                                    <div>記住我</div>
                                 </div>
                             </li>
                             <li>
                                 <div class="keeplogin">
-                                    <input type="checkbox">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <input type="checkbox" class="k-c">
+                                        <i class="fa-regular fa-circle-check" id="circle2"></i>
+                                    </div>
+                                    <div>保持登入</div>
                                 </div>
                             </li>
+                            <a href="#" style="text-decoration: none; margin-left: 25%;">忘記密碼?</a>
                         </ul>
                     </div>
 
@@ -195,6 +266,71 @@
             // 顯示按鈕
             $('#menu').show();
         })
+
+        /*密碼切換顯示*/
+       
+        function changePwdType(){
+            var pwd = document.getElementById('pwd');        
+            //var i = $('#i');
+// console.log(i);
+
+            if(pwd.type == 'password'){
+                pwd.type = 'text';
+                /*移除並新增class*/
+                $('i.fa-eye').removeClass('fa-eye').addClass('fa-eye-slash');
+            }else {
+                pwd.type = 'password';
+                $('i.fa-eye-slash').removeClass('fa-eye-slash').addClass('fa-eye');
+            }
+        }    
+
+        /*checkbox*/
+        $(document).ready(function () {
+            var rcheckbox = $('.r-c');
+            var kcheckbox = $('.k-c');
+            var rcircle = $('#circle1');
+            var kcircle = $('#circle2');
+            var r = 0, k = 0;
+
+            /*預設checkbox內容為隱藏*/
+            rcheckbox.on('click', function () {
+                // console.log(rcircle);
+                if(r == 0){
+                    $(this).css('background-color', 'rgb(73, 73, 73)')
+                    r += 1;
+                }else if(r == 1){
+                    $(this).css('background-color', '#ffffff')
+                    r -= 1;
+                }
+                
+                // console.log(circlecheck.css('display'));
+                if (rcircle.css('display') == 'none') {
+                    rcircle.css('display', 'block');
+                } else {
+                    rcircle.css('display', 'none')
+                }
+
+            })
+
+            kcheckbox.on('click', function () {
+                // console.log("2");
+                if(k == 0){
+                    $(this).css('background-color', 'rgb(73, 73, 73)')
+                    k += 1;
+                }else if(k == 1){
+                    $(this).css('background-color', '#ffffff')
+                    k -= 1;
+                }
+
+                // console.log(circlecheck.css('display'));
+                if (kcircle.css('display') == 'none') {
+                    kcircle.css('display', 'block');
+                } else {
+                    kcircle.css('display', 'none')
+                }
+            })
+
+        });
 
     </script>
 
