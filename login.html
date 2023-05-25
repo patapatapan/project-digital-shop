@@ -230,7 +230,7 @@
                                         <input type="checkbox" class="k-c">
                                         <i class="fa-regular fa-circle-check" id="circle2"></i>
                                     </div>
-                                    <div>保持登入</div>
+                                    <div>自動登入</div>
                                 </div>
                             </li>
                             <a href="#" style="text-decoration: none; margin-left: 25%;">忘記密碼?</a>
@@ -268,21 +268,21 @@
         })
 
         /*密碼切換顯示*/
-       
-        function changePwdType(){
-            var pwd = document.getElementById('pwd');        
-            //var i = $('#i');
-// console.log(i);
 
-            if(pwd.type == 'password'){
+        function changePwdType() {
+            var pwd = document.getElementById('pwd');
+            //var i = $('#i');
+            // console.log(i);
+
+            if (pwd.type == 'password') {
                 pwd.type = 'text';
                 /*移除並新增class*/
                 $('i.fa-eye').removeClass('fa-eye').addClass('fa-eye-slash');
-            }else {
+            } else {
                 pwd.type = 'password';
                 $('i.fa-eye-slash').removeClass('fa-eye-slash').addClass('fa-eye');
             }
-        }    
+        }
 
         /*checkbox*/
         $(document).ready(function () {
@@ -295,14 +295,14 @@
             /*預設checkbox內容為隱藏*/
             rcheckbox.on('click', function () {
                 // console.log(rcircle);
-                if(r == 0){
+                if (r == 0) {
                     $(this).css('background-color', 'rgb(73, 73, 73)')
                     r += 1;
-                }else if(r == 1){
+                } else if (r == 1) {
                     $(this).css('background-color', '#ffffff')
                     r -= 1;
                 }
-                
+
                 // console.log(circlecheck.css('display'));
                 if (rcircle.css('display') == 'none') {
                     rcircle.css('display', 'block');
@@ -314,10 +314,10 @@
 
             kcheckbox.on('click', function () {
                 // console.log("2");
-                if(k == 0){
+                if (k == 0) {
                     $(this).css('background-color', 'rgb(73, 73, 73)')
                     k += 1;
-                }else if(k == 1){
+                } else if (k == 1) {
                     $(this).css('background-color', '#ffffff')
                     k -= 1;
                 }
