@@ -9,7 +9,7 @@
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="bootstrap-5.3.0-alpha3-dist/css/bootstrap.min.css"> -->
     </link>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="register.css">
     <!-- font-awesome -->
     <script src="https://kit.fontawesome.com/3074d87162.js" crossorigin="anonymous"></script>
     <script src="jquery-3.6.4.min.js"></script>
@@ -18,7 +18,7 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
     <!-- <link rel="stylesheet" href="bootstrap-5.3.0-alpha3-dist/js/bootstrap.bundle.min.js"> -->
-    <title>登入</title>
+    <title>註冊</title>
 
 </head>
 
@@ -35,75 +35,49 @@
         </div>
 
         <div class="login">
-            <!-- 登入畫面白色底框 -->
+            <!-- 畫面白色底框 -->
             <div class="form-box">
                 <form action="">
-                    <input type="text" name="userid" placeholder="帳號" id="userid">
-                    <div class="pwd">
-                        <input type="password" name="password" placeholder="密碼" id="pwd">
-                        <button onclick="changePwdType()" type="button"><i class="fa-solid fa-eye-slash"></i></button>
-                    </div>
+                    <div class="row">
+                        <div class="title mb-1 d-flex justify-content-center">
+                            <h4>創建您的帳號</h4>
+                        </div>
+                        <div class="row-flex">
+                            <label for="dateInput">姓名</label>
+                            <input type="text" name="name" placeholder="姓名" id="name">
+                        </div>
+                        <div class="row-flex">
+                            <label for="dateInput">出生日期</label>
+                            <input type="date" id="birth" name="birth">
+                        </div>
+                        <div class="row-flex">
+                            <label for="dateInput">顯示名稱</label>
+                            <input type="text" name="displayname" placeholder="顯示名稱" id="displayname">
+                        </div>
+                        <div class="row-flex">
+                            <label for="dateInput">電子信箱</label>
+                            <input type="email" name="email" placeholder="註冊信箱" id="email">
+                        </div>
+                        <div class="row-flex">
+                            <label for="dateInput">帳號</label>
+                            <input type="text" name="userid" placeholder="帳號" id="userid">
+                        </div>
+                        <div class="row-flex">
+                            <label for="dateInput">密碼</label>
+                            <div class="pwd">
+                                <input type="password" name="password" placeholder="密碼" id="pwd">
+                                <button onclick="changePwdType()" type="button"><i
+                                        class="fa-solid fa-eye-slash"></i></button>
+                            </div>
+                        </div>
+                        <!-- 登入按鈕 -->
+                        <div class="btn-login">
+                            <button class="col-12">送出</button>
+                            <a href="login.html">登入會員</a>
+                        </div>
 
-                    <div class="" style="width: 100%; height: 40px;">
-                        <ul class="check-box">
-                            <li>
-                                <div class="remember">
-                                    <div class="d-flex justify-content-center align-items-center">
-                                        <input type="checkbox" class="r-c">
-                                        <i class="fa-regular fa-circle-check" id="circle1"></i>
-                                    </div>
-                                    <div>記住我</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="keeplogin">
-                                    <div class="d-flex justify-content-center align-items-center">
-                                        <input type="checkbox" class="k-c">
-                                        <i class="fa-regular fa-circle-check" id="circle2"></i>
-                                    </div>
-                                    <div>自動登入</div>
-                                </div>
-                            </li>
-                            <a href="#" style="margin-left: 25%;">忘記密碼?</a>
-                        </ul>
-                    </div>
 
-                    <!-- 登入按鈕 -->
-                    <div class="btn-login">
-                        <button class="col-12">登入</button>
                     </div>
-
-                    <!-- 未註冊跳轉 -->
-                    <div class="sing-up">
-                        <p class="footer-content  d-flex justify-content-center col-12 pt-3" style="font-size: 14px;">
-                            點擊 &nbsp;
-                            <a href="register.html">註冊</a>
-                            &nbsp; 加入會員
-                        </p>
-                    </div>
-
-                    <!-- 其他登入方式 -->
-                    <div class="another">
-                        <hr>
-                        <p>使用其他方式登入</p>
-                        <hr>
-                    </div>
-
-                    <div class="btn-another">
-                        <button type="button" class="m-0">
-                            <img src="img/google.png" alt="">
-                        </button>
-                        <button type="button">
-                            <img src="img/twitter.png" alt="">
-                        </button>
-                        <button type="button">
-                            <img src="img/Facebook.png" alt="">
-                        </button>
-                        <button type="button">
-                            <img src="img/reddit.png" alt="">
-                        </button>
-                    </div>
-
                 </form>
             </div>
         </div>
@@ -115,10 +89,10 @@
                 <div class="text-center text-white mt-5">-&copy;2023 Patapatapan 版權所有 參考Epic Games , Steam ,
                     Electronic
                     Arts ,
-                    Ubisoft 無商業利益 純個人練習 。-</div>
+                    Ubisoft 無商業利益 純個人練習 。-
+                </div>
             </div>
         </div>
-
     </div>
     <script>
         /*密碼切換顯示*/
