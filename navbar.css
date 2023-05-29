@@ -1,88 +1,78 @@
 /* 媒體查詢：大於等於 768px 的裝置*/
 @media screen and (min-width: 768px) {
-    .user{
+    .user {
         order: 1;
     }
 
-    .menu{
+    .menu {
         justify-content: center;
     }
 
-    ul{
+    ul {
         justify-content: center;
     }
 
-    #search-button1{
+    #search-button1 {
         display: block;
     }
 
     #search-button2 {
         display: none;
     }
-} 
+}
 
 /* 媒體查詢：小於 768px 的裝置 */
 @media screen and (max-width: 767px) {
+
     /* 按鈕置左 */
-        .navbar-toggler {
-            order: -1;
-            margin-right: auto;
-            margin-left: 10px;
-        }
-    
-        /* 導覽列置左 */
-        .menu {
-            justify-content: start;
-            /*導覽列成豎狀*/
-            flex-direction: column;
-            margin-top: 10px;
-        }
+    .navbar-toggler {
+        order: -1;
+        margin-right: auto;
+        margin-left: 10px;
+    }
 
-        img {
-            display: block;
-            margin: 0 auto;
-        }
+    /* 導覽列置左 */
+    .menu {
+        justify-content: start;
+        /*導覽列成豎狀*/
+        flex-direction: column;
+        margin-top: 10px;
+    }
 
-        #search-button1 {
-            display: none;
-        }
+    .login-logo img {
+        display: block;
+        margin: 0 auto;
+    }
 
-        #search-button2 {
-            display: block;
-        }
+    #search-button1 {
+        display: none;
+    }
+
+    #search-button2 {
+        display: block;
+    }
 }
 
 /*背景顏色*/
-body{
+body {
     background-color: rgba(221, 221, 221, 0.5);
 }
 
-/*隱藏超過寬度*/
-.container-fluid{
-    overflow-x: hidden;
-}
-
-.navbar{
-    background-color:rgb(73, 73, 73);
+.navbar {
+    background-color: rgb(73, 73, 73);
     /*導覽列背景顏色*/
 }
 
-img{
-    width:40px ;
-    height:40px ;
-    margin-left: 10px;
-}
-
-li{
+li {
     list-style: none;
 }
 
-button{
+button {
     float: left;
 }
 
-.navbar-nav{
-    justify-content:center;
+.navbar-nav {
+    justify-content: center;
     text-align: center;
 }
 
@@ -99,13 +89,13 @@ button{
 
 /* 導覽列項目 */
 /* 滑過去變色 */
-.nav-item:hover{
+.nav-item:hover {
     background-color: rgb(130, 130, 130);
     border-radius: 15px;
 }
 
 /* 頁籤顏色 */
-.nav-pills .nav-link.active{
+.nav-pills .nav-link.active {
     background-color: rgb(130, 130, 130);
     opacity: 1;
 }
@@ -113,12 +103,12 @@ button{
 /* 點擊頁籤變色 */
 .nav-link.active,
 .show>.nav-link {
-        background-color: rgb(130, 130, 130);
-        opacity: 1;
-        border-radius: 15px;
+    background-color: rgb(130, 130, 130);
+    opacity: 1;
+    border-radius: 15px;
 }
 
-.user{
+.user {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -126,11 +116,11 @@ button{
     /* 防止图标换行 */
 }
 
-.icon{
+.icon {
     opacity: 0.5;
 }
 
-.icon:hover{
+.icon:hover {
     opacity: 1;
 }
 
@@ -139,20 +129,20 @@ button{
     transform: translate(0, -330%);
 }
 
-#search{
+#search {
     width: 80%;
     display: inline-block;
     vertical-align: middle;
 }
 
 .modal-content {
-  background-color: transparent;
-  box-shadow: none;
-  border: none;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
 }
 
 /* 搜尋按鈕設定 */
-i:hover{
+i:hover {
     opacity: 1;
 }
 
@@ -165,18 +155,17 @@ i:hover{
     opacity: 0.5;
 }
 
-.fa-xl{
-    font-size : 26px;
+.fa-xl {
+    font-size: 26px;
     color: aliceblue;
 }
 
-.fa-xl::before{
+.fa-xl::before {
     line-height: 2.5rem;
     margin-left: 8px;
 }
 
-.half-rounded{
+.half-rounded {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
-
