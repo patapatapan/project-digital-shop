@@ -26,6 +26,13 @@
 
         .thumbnail-container {
             margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .thumbnails {
+            display: flex;
+            justify-content: center;
+            transition: transform 0.3s ease-in-out;
         }
 
         .thumbnail-container img {
@@ -44,9 +51,11 @@
             <img id="main-image" src="img/1.jpg" alt="Alan Wake 2">
         </div>
         <div class="thumbnail-container">
-            <img src="img/2.jpg" onclick="changeMainImage('img/2.jpg')" alt="Thumbnail 1">
-            <img src="img/3.jpg" onclick="changeMainImage('img/3.jpg')" alt="Thumbnail 2">
-            <img src="img/4.jpg" onclick="changeMainImage('img/4.jpg')" alt="Thumbnail 3">
+            <div class="thumbnails">
+                <img src="img/2.jpg" alt="Thumbnail 1">
+                <img src="img/3.jpg" alt="Thumbnail 2">
+                <img src="img/4.jpg" alt="Thumbnail 3">
+            </div>
         </div>
     </div>
 
@@ -55,6 +64,28 @@
             var mainImage = document.getElementById('main-image');
             mainImage.src = imagePath;
         }
+
+        var thumbnailsContainer = document.querySelector('.thumbnails');
+        var thumbnails = document.querySelectorAll('.thumbnails img');
+        var currentIndex = 0;
+
+        function changeMainImage(index) {
+            var mainImage = document.getElementById('main-image');
+            mainImage.src = thumbnails[index].src;
+        }
+
+        function updateThumbnails() {
+            var thumbnailWidth = thumbnails[0].clientWidth;
+            thumbnailsContainer.style.transform = `translateX(${-currentIndex * thumbnailWidth}px)`;
+        }
+
+        thumbnails.forEach(function (thumbnail, index) {
+            thumbnail.addEventListener('click', function () {
+                currentIndex = index;
+                changeMainImage(currentIndex);
+                updateThumbnails();
+            });
+        });
     </script>
 </body>
 
