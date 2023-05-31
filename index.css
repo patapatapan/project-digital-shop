@@ -13,7 +13,7 @@
     border-radius: 30px;
 }
 
-.carousel-item img {
+.carousel-item > img {
     margin-left: 0;
 
 }
