@@ -39,7 +39,7 @@
 
 .right-content {
     height: 100%;
-    padding-left: 15px;
+    padding-left: 60px;
 }
 
 /*主要顯示圖片*/
@@ -118,8 +118,8 @@
     position: absolute;
     bottom: 0;
     height: 15px;
-    width: calc(100% - 70px);
-    background-color: rgb(125, 125, 125);
+    width: calc(100% - 60px);
+    background-color: rgb(150, 150, 150);
     border-radius: 4px;
 }
 
@@ -130,67 +130,41 @@
     width: 150px;
     height: 15px;
     /* 捲軸滑塊高度 */
-    background-color: #333333;
+    background-color: rgba(80, 80, 80);
     /* 捲軸滑塊顏色 */
     cursor: pointer;
     border-radius: 4px;
 }
 
+.scroll-thumb:hover {
+    background-color: rgb(40, 40, 40);
+}
+
 .swipe-button {
-    width: 35px;
+    width: 29px;
     height: 15px;
-    background-color: rgb(73, 73, 73, 0.5);
+    background-color: rgba(80, 80, 80);
     border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*不會被反白*/
+    user-select: none;
 }
 
 .swipe-button:hover {
-    background-color: rgb(73, 73, 73);
+    background-color: rgb(40, 40, 40);
 }
 
 .change {
     height: 100%;
-    width: 35px;
+    width: 30px;
     display: flex;
     align-items: center;
 }
 
-/* @media screen and (min-width: 1600px) {
-    .sm-pics img {
-        height: 100px;
-    }
-}
-
-@media screen and (min-width: 1440px) and (max-width:1599px) {
-    .sm-pics img {
-        height: 100px;
-    }
+/*遊戲文本介紹*/
+.product-text {
+    width: 80%;
 
 }
-
-@media screen and (min-width: 1200px) and (max-width:1439px) {
-    .sm-pics img {
-        height: 90px;
-    }
-
-}
-
-@media screen and (min-width: 980px) and (max-width:1199px) {
-    .sm-pics img {
-        height: 80px;
-    }
-
-}
-
-@media screen and (min-width: 864px) and (max-width:979px) {
-    .sm-pics img {
-        height: 60px;
-    }
-
-}
-
-@media screen and (max-width: 863px) {
-    .sm-pics img {
-        height: 50px;
-    }
-
-} */

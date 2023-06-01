@@ -49,4 +49,141 @@ var carouselElement = $(this).closest('.carousel');
                 } else if ($(this).hasClass('next')) {
                     var targetSlideIndex = (currentSlideIndex + 1) % totalSlides;
                     carouselElement.carousel(targetSlideIndex);
+                };
+
+-------------------------------------------------------------------------------------------------
+$(document).ready(function () {
+            const container = $('.thumbnails');
+            const scrollContainer = $('#scrollContainer');
+            const scrollBar = $('.scrollBar');
+            const scrollThumb = $('#scrollThumb');
+
+            container.on('scroll', function () {
+                const scrollPercentage = (container.scrollLeft() / (scrollContainer.outerWidth() - container.outerWidth())) * 100;
+                scrollThumb.css('left', scrollPercentage + '%');
+            });
+
+            scrollThumb.on('mousedown', function (e) {
+                const startX = e.clientX;
+                const startScrollLeft = container.scrollLeft();
+
+                $(document).on('mousemove', function (e) {
+                    const deltaX = e.clientX - startX;
+                    const scrollableWidth = scrollBar.outerWidth() - scrollThumb.outerWidth();
+                    const scrollPercentage = (startScrollLeft + (deltaX / scrollableWidth) * (scrollContainer.outerWidth() - container.outerWidth()));
+                    container.scrollLeft(scrollPercentage);
+                });
+
+                $(document).on('mouseup', function () {
+                    $(document).off('mousemove');
+                    $(document).off('mouseup');
+                });
+            });
+        });
+
+                        <div class="thumbnails">
+                            <div class="sm-pics" id="scrollContainer">
+                                <img src="img/1.jpg" alt="Thumbnail 1">
+                                <img src="img/2.jpg" alt="Thumbnail 2">
+                                <img src="img/3.jpg" alt="Thumbnail 3">
+                                <img src="img/4.jpg" alt="Thumbnail 4">
+                                <img src="img/1.jpg" alt="Thumbnail 1">
+                                <img src="img/2.jpg" alt="Thumbnail 2">
+                                <img src="img/3.jpg" alt="Thumbnail 3">
+                                <img src="img/4.jpg" alt="Thumbnail 4">
+                                <img src="img/1.jpg" alt="Thumbnail 1">
+                                <img src="img/2.jpg" alt="Thumbnail 2">
+                                <img src="img/3.jpg" alt="Thumbnail 3">
+                                <img src="img/4.jpg" alt="Thumbnail 4">
+                            </div>
+                            <div class="scroll">
+                                <div class="scrollBar">
+                                    <div class="scroll-thumb" id="scrollThumb"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        //確保選取圖片沒有在可見範圍外
+        $(document).ready(function () {
+            var scrollContainer = $("#scrollContainer");
+            var selectedImage = $(".sm-pics .selected");
+
+            // 檢查選取的圖片是否在可見範圍內，若不在則捲動至可見範圍
+            function ensureVisible() {
+                var containerLeft = scrollContainer.scrollLeft();
+                var containerRight = containerLeft + scrollContainer.width();
+                var imageLeft = selectedImage.offset().left;
+                var imageRight = imageLeft + selectedImage.outerWidth();
+
+                // 若選取的圖片在可見範圍內，則不執行任何動作
+                if (imageLeft >= containerLeft && imageRight <= containerRight) {
+                    return;
                 }
+
+                // 若選取的圖片在可見範圍的左側，將捲動容器以使圖片出現在左側可見範圍內
+                if (imageLeft < containerLeft) {
+                    scrollContainer.scrollLeft(imageLeft);
+                }
+                // 若選取的圖片在可見範圍的右側，將捲動容器以使圖片出現在右側可見範圍內
+                else if (imageRight > containerRight) {
+                    var scrollAmount = imageRight - scrollContainer.width();
+                    scrollContainer.scrollLeft(scrollAmount);
+                }
+            }
+
+            // 初始化時確保選取的圖片在可見範圍內
+            ensureVisible();
+
+            // 監聽圖片的選取事件，選取時確保在可見範圍內
+            $(".sm-pics img").on("click", function () {
+                selectedImage = $(this);
+                ensureVisible();
+            });
+        });
+
+
+        -------------------------
+        // $(".sm-pics img").click(function () {
+        //     // 移除其他圖片的選擇樣式
+        //     $(".sm-pics img").removeClass("selected");
+
+        //     // 將點擊的圖片加上選擇樣式
+        //     $(this).addClass("selected");
+        // });
+
+        // $(document).ready(function () {
+        //     var prev = $(".prev");
+        //     var next = $(".next");
+
+        //     var currentIndex = 0;
+        //     var img = $(".sm-pics img")
+        //     console.log(img.length);
+        //     /*初始化 第一張圖片被選擇*/
+        //     $(img[currentIndex]).addClass("selected");
+
+        //     prev.on("click", function () {
+        //         $(img[currentIndex]).removeClass("selected");
+
+        //         /*依索引值 選前一張圖片*/
+        //         currentIndex--;
+
+        //         if (currentIndex < 0) {
+        //             currentIndex = img.length - 1;
+        //         }
+
+        //         $(img[currentIndex]).addClass("selected");
+        //     });
+
+        //     next.on("click", function () {
+        //         $(img[currentIndex]).removeClass("selected");
+
+        //         /*依索引值 選前一張圖片*/
+        //         currentIndex++;
+
+        //         if (currentIndex >= img.length) {
+        //             currentIndex = 0;
+        //         }
+
+        //         $(img[currentIndex]).addClass("selected");
+        //     });
+        // });

@@ -123,13 +123,6 @@
                     </div>
                     <!-- 切換按鈕(圖片) -->
                     <div class="row changed-img">
-                        <!-- <div class="change p-0" style="position: relative; margin-right: 10px;">
-                            <div class="swipe-button d-flex justify-content-center align-items-center prev"
-                                type="button">
-                                <span>❮</span>
-                            </div>
-                        </div> -->
-
                         <div class="thumbnails">
                             <div class="sm-pics" id="scrollContainer">
                                 <img src="img/1.jpg" alt="Thumbnail 1">
@@ -147,33 +140,59 @@
                             </div>
                             <div class="scroll">
                                 <div class="change p-0" style="position: absolute;left: 0;">
-                                    <div class="swipe-button d-flex justify-content-center align-items-center prev"
-                                        type="button">
-                                        <span>❮</span>
+                                    <div class="swipe-button prev text-white" type="button" style="margin-right: 1px;">
+                                        <span>⯇</span>
                                     </div>
                                 </div>
                                 <div class="scrollBar">
                                     <div class="scroll-thumb" id="scrollThumb"></div>
                                 </div>
-                                <div class="change p-0 d-flex justify-content-end"
-                                    style="position: absolute;right: 0;">
-                                    <div class="swipe-button d-flex justify-content-center align-items-center next"
-                                        type="button"><span>❯</span>
+                                <div class="change p-0 d-flex justify-content-end" style="position: absolute;right: 0;">
+                                    <div class="swipe-button next text-white" type="button" style="margin-left: 1px;">
+                                        <span>⯈</span>
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- <div class="change p-0 d-flex justify-content-end"
-                            style="position: relative; margin-left: 10px;">
-                            <div class="swipe-button d-flex justify-content-center align-items-center next"
-                                type="button"><span>❯</span>
-                            </div> -->
                         </div>
                     </div>
                 </div>
-                <div class="right-content col-4 p-0">
+                <div class="right-content col-4 d-flex flex-column">
+                    <img src="img/1.jpg" alt="" class="img-fluid">
+                    <h6 class="mt-2 text-white bg-warning d-flex justify-content-center"
+                        style="width: 60px; border-radius: 5px;">-50%</h6>
+                    <div class="d-flex">
+                        <h5 style="margin-right: 10px;">$NT1750</h5>
+                        <h6 style="text-decoration: line-through;">$NT1850</h6>
+                    </div>
+                    <div class="btn btn-warning">預購</div>
+                    <div class="btn btn-warning mt-2">加入購物車</div>
+                    <div class="btn btn-warning mt-2">新增至願望清單</div>
+                    <div class="d-flex justify-content-between mt-2"
+                        style="border-bottom: 1px solid rgba(0,139,139,0.5);">
+                        <h6>開發者</h6>
+                        <h6>ele65250</h6>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2"
+                        style="border-bottom: 1px solid rgba(0,139,139,0.5);">
+                        <h6>發行商</h6>
+                        <h6>ele65250</h6>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2"
+                        style="border-bottom: 1px solid rgba(0,139,139,0.5);">
+                        <h6>發行日期</h6>
+                        <h6>ele65250</h6>
+                    </div>
+                    <div class="d-flex mt-2">
+                        <h4 class="btn w-50" style="border:1px solid rgba(0,139,139,0.5); border-radius: 5px;">分享</h4>
+                        <h4 class="btn w-50" style="border:1px solid rgba(0,139,139,0.5); border-radius: 5px;">回報</h4>
+                    </div>
                 </div>
             </div>
+        </div>
+
+        <!-- 遊戲介紹 -->
+        <div class="product-text">
+
         </div>
 
         <!-- 底部版權 -->
@@ -201,22 +220,97 @@
             $('#menu').show();
         })
 
-        // 當圖片被點擊時
-        $(".sm-pics img").click(function () {
-            // 移除其他圖片的選擇樣式
-            $(".sm-pics img").removeClass("selected");
+        // 當圖片被選擇時
+        $(document).ready(function () {
+            var prev = $(".prev");
+            var next = $(".next");
+            var mainImg = $(".main-img img");
 
-            // 將點擊的圖片加上選擇樣式
-            $(this).addClass("selected");
+            var currentIndex = 0;
+            var img = $(".sm-pics img");
+            //console.log(img.length);
+            /* 初始化 第一張圖片被選擇 */
+            $(img[currentIndex]).addClass("selected");
 
-            // 檢查選擇的圖片是否在可見範圍內
-            // if ($(this).position().left + $(this).outerWidth() > $(".thumbnails").width()) {
-            //     // 將卷軸拉至該圖片位置
-            //     $(".thumbnails").scrollLeft($(this).position().left);
-            // }
+            // 處理選擇圖片的函式
+            function selectImage(index) {
+                $(img).removeClass("selected");
+                $(img[index]).addClass("selected");
+                currentIndex = index;
+                // 取代 main-img 的圖片
+                mainImg.attr("src", img.eq(index).attr("src"));
+            }
+
+            // 圖片點擊事件
+            img.on("click", function () {
+                var index = $(this).index();
+                selectImage(index);
+            });
+
+            // 上一張按鈕點擊事件
+            prev.on("click", function () {
+                var index = currentIndex - 1;
+                if (index < 0) {
+                    index = img.length - 1;
+                }
+                selectImage(index);
+            });
+
+            // 下一張按鈕點擊事件
+            next.on("click", function () {
+                var index = currentIndex + 1;
+                if (index >= img.length) {
+                    index = 0;
+                }
+                selectImage(index);
+            });
         });
-    </script>
 
+        /*監聽卷軸滾動*/
+        $(document).ready(function () {
+            var scrollContainer = $("#scrollContainer");
+            var scrollThumb = $("#scrollThumb");
+            var scrollBar = $(".scrollBar");
+
+            scrollContainer.on("scroll", function () {
+                var scrollPercentage = scrollContainer.scrollLeft() / (scrollContainer[0].scrollWidth - scrollContainer.outerWidth());
+                var maxScrollThumbLeft = scrollBar.outerWidth() - scrollThumb.outerWidth();
+                var scrollThumbLeft = scrollPercentage * maxScrollThumbLeft;
+
+                scrollThumb.css("left", scrollThumbLeft + "px");
+            });
+
+            scrollThumb.on("mousedown", function (event) {
+                event.preventDefault();
+                var initialPosition = event.clientX;
+                var initialScrollThumbLeft = scrollThumb.position().left;
+
+                function scroll(event) {
+                    var delta = event.clientX - initialPosition;
+                    var newScrollThumbLeft = initialScrollThumbLeft + delta;
+                    var maxScrollThumbLeft = scrollBar.outerWidth() - scrollThumb.outerWidth();
+
+                    // 限制滑塊的移動範圍
+                    newScrollThumbLeft = Math.max(0, Math.min(newScrollThumbLeft, maxScrollThumbLeft));
+
+                    var scrollPercentage = newScrollThumbLeft / maxScrollThumbLeft;
+                    var scrollLeft = scrollPercentage * (scrollContainer[0].scrollWidth - scrollContainer.outerWidth());
+
+                    scrollThumb.css("left", newScrollThumbLeft + "px");
+                    scrollContainer.scrollLeft(scrollLeft);
+                }
+
+                function stopScroll() {
+                    $(window).off("mousemove", scroll);
+                    $(window).off("mouseup", stopScroll);
+                }
+
+                $(window).on("mousemove", scroll);
+                $(window).on("mouseup", stopScroll);
+            });
+        });
+
+    </script>
 </body>
 
 </html>
